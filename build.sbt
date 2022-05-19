@@ -1,4 +1,4 @@
-name := "ass_01"
+name := "bigdata"
 
 version := "0.1"
 
