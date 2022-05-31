@@ -18,3 +18,8 @@ The method `execution(nTasks: Int): Int`  contains the main algorithm. For the n
 In the *main*-method you can find several *ccRealisation* calls for the different parameter setups. The result of each execution will be stored in `res/ass2/FILENAME.csv`.
 
 A .pdf file with the value evaluation can also be found in `res/ass2/evaluation.pdf.`
+
+### Assignment 3 (.ass3)
+The solution is implemented in Tasks.scala. All test cases are successfully executed.
+
+Just one addition: For task 5 I provided two possible solutions. I don't know, if the improved one is permissible.
