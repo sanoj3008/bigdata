@@ -22,4 +22,11 @@ A .pdf file with the value evaluation can also be found in `res/ass2/evaluation.
 ### Assignment 3 (.ass3)
 The solution is implemented in Tasks.scala. All test cases are successfully executed.
 
-Just one addition: For task 5 I provided two possible solutions. I don't know, if the improved one is permissible.
+Just one addition: For task 3 and 5 I provided two possible solutions. I don't know, if the improved one is permissible.
+
+### Assignment 4 (.ass4)
+The solution is implemented in the provided scala files.
+
+Exercise 1 writes its solution into the specified file. To run in your environment, just change the value of `PATH_TO_CSV`. The whole implementation if fully commented.
+
+Exercise 2 has the same structure as in Assignment 3. All test cases are successfully executed.

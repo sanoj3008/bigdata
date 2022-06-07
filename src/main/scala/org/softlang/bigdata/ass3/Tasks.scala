@@ -37,11 +37,16 @@ object Tasks {
     if (e%2 == 0) "even"
      else "odd"
   })
+  def task1Sol(seq: Seq[Int]): Seq[String] = seq.map({
+    case elem if elem % 2 == 0 => "even"
+    case _ => "odd"
+  })
 
   /**
    * Filter a list of path names for ".java" files.
    */
   def task2(seq: Seq[String]): Seq[String] = seq.filter(e => e.takeRight(5) == ".java")
+  def task2Sol(seq: Seq[String]): Seq[String] = seq.filter(e => e.split("\\.").last == "java")
 
   /**
    * Form the product of all numbers contained in the collection.
@@ -53,12 +58,15 @@ object Tasks {
    * Concat the individual strings of this collection forming a single string.
    */
   def task4(seq: Seq[String]): String = seq.reduce((a,b) => a+b)
+  // How to handle empty seqs
+  def task4Sol(seq: Seq[String]): String = seq.reduceOption((a,b) => a+b).getOrElse("")
 
   /**
    * Check if x is a member (contained) in the sequence.
    */
   def task5(seq: Seq[String], x: String): Boolean = seq.map(e => e == x).reduce((x,y) => x || y)
   def task5Improved(seq: Seq[String], x: String): Boolean = seq.contains(x)
+  def task5Sol(seq: Seq[String], x: String): Boolean = seq.foldLeft(false)((b,m) => b || m == x)
 
   /**
    * (Optional) Implement grouping by a key, without using the "groupBy" method provided on the collection,
