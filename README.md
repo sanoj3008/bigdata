@@ -30,3 +30,12 @@ The solution is implemented in the provided scala files.
 Exercise 1 writes its solution into the specified file. To run in your environment, just change the value of `PATH_TO_CSV`. The whole implementation if fully commented.
 
 Exercise 2 has the same structure as in Assignment 3. All test cases are successfully executed.
+
+### Assignment 5 (.ass5)
+The solution is implemented in the provided scala files.
+
+For exercise 1 I didn't find any solutions in case of *myReduceByKey* and *myJoin*. I spend a lot of time, but I didn't get it. :smirk:
+In case of *myReduce* I tried something out, but I don't know, if this procedure is legal.
+
+Exercise 2 is fully implemented and commented in *Assignment52Stub*.
+**WARNING:** The required movies.csv must be externally provided in *res/ass5* before execution.
