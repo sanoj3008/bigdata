@@ -2,7 +2,7 @@ package org.softlang.bigdata.ass5.sol
 
 import org.apache.spark.sql.{DataFrame, SparkSession}
 
-object Assignment52Tutorial2 {
+object Tutorial {
 
   def main(args: Array[String]): Unit = {
 

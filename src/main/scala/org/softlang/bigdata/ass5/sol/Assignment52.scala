@@ -6,7 +6,7 @@ import org.apache.spark.sql.{DataFrame, SparkSession}
 
 import scala.reflect.{ClassTag, classTag}
 
-object Assignment52Solution {
+object Assignment52 {
 
   def main(args: Array[String]): Unit = {
 

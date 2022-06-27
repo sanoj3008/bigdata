@@ -6,7 +6,7 @@ It is only me: **jonasschell@uni-koblenz.de**
 
 ### Project structure
 All solutions can be found under `src/main/scala/org.softlang.bigdata`.
-Each Assignment has its own package **assX**.
+Each Assignment has its own package **assX**. In each assignment package besides the tasks files you can also find the solutions there in the **sol** package. 
 
 #### Assignment 1 (.ass1)
 Mutable solution is implemented from line 57. Immutable solution comes behind that.
@@ -43,3 +43,5 @@ Exercise 2 is fully implemented and commented in *Assignment52Stub*.
 ### Assignment 6 (.ass6)
 The solution is implemented in the provided scala file.
 
+### Assignement 7 (.ass7)
+To be continued...

@@ -7,7 +7,7 @@ import org.apache.spark.util.Utils
 
 import scala.reflect.ClassTag
 
-object Assignment51Solution {
+object Assignment51 {
 
   def nonNegativeMod(x: Int, mod: Int): Int = {
     val rawMod = x % mod

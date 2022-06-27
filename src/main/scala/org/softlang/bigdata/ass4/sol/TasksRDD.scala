@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 
 import scala.util.Random
 
-object TasksRDDSolution {
+object TasksRDD {
 
   def main(args: Array[String]): Unit = {
 

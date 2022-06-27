@@ -5,7 +5,7 @@ import org.apache.spark.sql.SparkSession
 
 import scala.util.Random
 
-object FrankensteinSolution {
+object Frankenstein {
 
   def main(args: Array[String]): Unit = {
     // Setup spark.
