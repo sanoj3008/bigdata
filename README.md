@@ -39,3 +39,7 @@ In case of *myReduce* I tried something out, but I don't know, if this procedure
 
 Exercise 2 is fully implemented and commented in *Assignment52Stub*.
 **WARNING:** The required movies.csv must be externally provided in *res/ass5* before execution.
+
+### Assignment 6 (.ass6)
+The solution is implemented in the provided scala file.
+
