@@ -1,6 +1,6 @@
 package org.softlang.bigdata.ass7
 
-import org.softlang.bigdata.ass7.MyDistributedKVStore2.random
+//import org.softlang.bigdata.ass7.MyDistributedKVStore2.random
 
 import scala.collection.mutable
 import scala.util.Random
@@ -22,6 +22,9 @@ object MyDistributedKVStore2 {
 
   // Number of machines.
   var nmachines = 42
+
+  // Amount of machines per chunk
+  var machineChunkSize = 6
 
   // Simulation time.
   var time = 0
@@ -63,24 +66,34 @@ object MyDistributedKVStore2 {
     readWrites = mutable.Map[(Int, Int), Int]()
   }
 
+  /*
+    !!! For a better understanding, first read the documentation of set function !!!
+    The get function checks for a given key, if there are any information found in the key value store
+    Therefor it first calculates the possible position in the chunk and after that it iterates over all chunks to find a possible entry
+    If there is no entry it return None
+   */
   def get(key: String): Option[String] = {
-    // TODO: Improve.
-
-    for (machine <- 0 until nmachines) {
-      val option = simulateGet(key, machine)
-
-      if (option.isDefined) return option
+    val posInChunk = Math.abs(key.hashCode) % machineChunkSize
+    for(machine <- 0 until (nmachines / machineChunkSize)) {
+      val chunkNumber = machine * machineChunkSize
+      val option = simulateGet(key, posInChunk + chunkNumber)
+      if(option.isDefined) return option
     }
-    // We dont know it.
     None
   }
 
+  /*
+    This function adds a new entry for a specific key in our key value store.
+    The key value store is divided into many chunks. That allows us to minimize the workload on the individual machines.
+    If we want to add a new entry, we randomly choose one chunk of machines and add our data at a specific position.
+    This position is calculated by using the modulo operation and is always the same for the corresponding group of hashCodes.
+    Although our data is only stored once, we will find a configuration, where this system works very well (compare pdf).
+   */
   def set(key: String, value: String): Unit = {
     // TODO: Improve.
-
-    for (machine <- 0 until nmachines) {
-      simulateSet(key, value, machine)
-    }
+    val posInChunk = Math.abs(key.hashCode) % machineChunkSize // calculate position in chunk
+    val chunkNumber = machineChunkSize * random.nextInt(nmachines/machineChunkSize) // randomly choose one chunk
+    simulateSet(key, value, posInChunk + chunkNumber) // add data to determined machine
   }
 
   // Example experiments:
@@ -91,7 +104,33 @@ object MyDistributedKVStore2 {
     experiment()
 
     println("-----------------------")
-    failRate = 0.01
+    failRate = 0.001
+    nmachines = 40
+    machineChunkSize = 10
+    resetSimulation()
+    experiment()
+
+    println("-----------------------")
+    failRate = 0.001
+    readRate = 0.5
+    nmachines = 40
+    machineChunkSize = 10
+    resetSimulation()
+    experiment()
+
+    println("-----------------------")
+    failRate = 0.001
+    readRate = 0.40
+    nmachines = 40
+    machineChunkSize = 10
+    resetSimulation()
+    experiment()
+
+    println("-----------------------")
+    failRate = 0.05
+    readRate = 0.40
+    nmachines = 40
+    machineChunkSize = 10
     resetSimulation()
     experiment()
   }

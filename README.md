@@ -44,4 +44,12 @@ Exercise 2 is fully implemented and commented in *Assignment52Stub*.
 The solution is implemented in the provided scala file.
 
 ### Assignement 7 (.ass7)
-To be continued...
+The solution is implemented in the provided scala file. The necessary functions `def get(key: String): Option[String]` and `def set(key: String, value: String): Unit` are fully commented.
+
+For my solution I seperate the set of machines in multiple chunks:
+
+![chunks](https://github.com/sanoj3008/bigdata/blob/main/res/ass7/chunks.png)
+
+If you want to add for example *key_23* into the key-value-store you have first to choose one of the chunks randomly. After that you calculate the position of the data by using the modulo operator on the absolute hashcode.
+
+If you now want to check, whether the requested key has a value in our data system, you just need to look in each of the chunks at the specified position for the corresponding key value pair.
