@@ -65,7 +65,7 @@ object Assignment52Stub {
     // a.) For exercise a we only need to present the movieCount data frame.
     movieCount.show(LIMIT, truncate = false)
 
-    // b.)
+    // b.)mu
     genreCountryCount.groupBy("genres")
       .sum("genresMovieCount")
       .withColumnRenamed("sum(genresMovieCount)", "genresCount")

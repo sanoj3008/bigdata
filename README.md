@@ -53,3 +53,10 @@ For my solution I seperate the set of machines in multiple chunks:
 If you want to add for example *key_23* into the key-value-store you have first to choose one of the chunks randomly. After that you calculate the position of the data by using the modulo operator on the absolute hashcode.
 
 If you now want to check, whether the requested key has a value in our data system, you just need to look in each of the chunks at the specified position for the corresponding key value pair.
+
+A .pdf file with the needed execution analysis is provided in `./res/ass7`.
+
+### Assignment 8 (.ass8)
+The solution is implemented in the provided scala file. All consumer functions are fully commented.
+
+For a successful execution of this exercise you need to refer to the *frank.txt* of assignment 4.
